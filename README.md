@@ -13,13 +13,21 @@ K zodpovězení výše uvedených otázek byly připraveny 2 tabulky.
 
 Primární tabulka t_hana_simkova_project_sql_primary_final obsahuje robustní datové podklady, ve kterých je možné vidět porovnání dostupnosti potravin na základě průměrných příjmů za určité časové období. 
 Struktura tabulky: 
+
 food_category – sloupec obsahuje srozumitelný název kategorie potravin.
+
 price – sloupec obsahuje hodnotu cen potravin za daný rok a kategorii.
+
 price_value – sloupec obsahuje základní hodnotu, ve které jsou potraviny uváděny.
+
 price_unit – sloupec obsahuje název měrné jednotky, ve které jsou potraviny uváděny.
+
 industry – sloupec obsahuje srozumitelný název odvětví.
+
 wage – sloupec obsahuje hodnotu mezd v daném roce a odvětví. 
+
 payroll_year – sloupec obsahuje rok, ve kterém jsou data sledována.
+
 Vytvoření tabulky:
 Tabulka t_hana_simkova_project_sql_primary_final vznikla spojením dat z různých tabulek (czechia_price, czechia_payroll, czechia_price_category, czechia_payroll_industry_branch) na základě vhodných klíčů a podmínek spojení. 
 Při výpočtu sloupce price byla použita funkce avg, protože hodnota ceny v tabulce czechia_price byla zaznamenávána za časové období od-do. 
@@ -29,12 +37,19 @@ Primární tabulka byla dále vhodně doplněna o sloupce price_value, price_uni
 Na závěr byla použita klauzule GROUP BY aby došlo k seskupení řádků, které mají stejnou hodnotu v jednom nebo více sloupcích. 
 
 Sekundární tabulka t_hana_simkova_project_sql_secondary_final obsahuje HDP, GINI koeficientem a hodnotu populace dalších evropských států ve stejném období jako primární tabulka.
+
 Struktura tabulky:
+
 country_name – sloupec obsahuje název země.
+
 GDP – sloupec obsahuje hodnotu HDP.
+
 gini – sloupec obsahuje hodnotu gini koeficientu.
+
 year – sloupec obsahuje rok, ve kterém jsou data sledována.
+
 population – sloupec obsahuje informaci o populaci v dané zemi.
+
 Vytvoření tabulky:
 Tabulka t_hana_simkova_project_sql_secondary_final vznikla spojením dat z tabulek economies a countries na základě vhodných klíčů a podmínek spojení. Protože v zadání byla podmínka vytvořit sekundární tabulku pro stejné období jako tabulka primární, byl zvolen filtr roku na období 2006-2018.
 
